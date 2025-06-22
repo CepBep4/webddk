@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="{{url_for('static', filename='main.js')}}"></script>    
+    <title>Главная</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="/static/logo.svg" alt="">
+            <span class="logotext">АНО ДПО<br>«СК «Альфа»</span>
+        </div>
+        <div class="navigation container-row">
+            <div class="nav-property" onclick="location.replace('/about')">О нас <span class="brdnav"></span></div>
+            <div class="nav-property" onclick="location.replace('/#programs')">Программа<span class="brdnav"></span></div>
+            <div class="nav-property" onclick="location.replace('/documents')">Документы<span class="brdnav"></span></div>
+            <div class="nav-property" onclick="location.replace('/contact')">Контакты<span class="brdnav"></span></div>
+        </div>
+    </div>
+    <div class="route-div">
+        <div class="text-route">
+            <div><span class="black-route" onclick="location.replace('/')">Главная / </span><span class="gray-route">Сведения об образовательной организации</span></div>
+            <div class="title-route">Документы</div>
+        </div>
+    </div>
+    <div class="wrapper">
+         <div class="title-text">
+            Документы
+            <span class="title-text-border"></span>
+        </div>
+        <div class="file-block" style="margin-top: 30px;">
+            <div class="file-card" onclick="location.replace('/static/docs/МИНИСТЕРСТВО_ЮСТИЦИИ_РОССИЙСКОЙ_ФЕДЕРАЦИИ.pdf')">
+                <img src="/static/doc.svg" alt="">
+                <div class="file-text">
+                    Свидетельство о гос. регистрации неком. организации
+                </div>
+            </div>
+            <div class="file-card" onclick="location.replace('/static/docs/ИНН.pdf')">
+                <img src="/static/doc.svg" alt="">
+                <div class="file-text">
+                    Свидетельство о постановке организации на учет в налоговом органе 
+                </div>
+            </div>
+            <div class="file-card" onclick="location.replace('/static/docs/Устав.pdf')">
+                <img src="/static/doc.svg" alt="">
+                <div class="file-text">
+                    Устав организации
+                </div>
+            </div>
+            <div class="file-card" onclick="location.replace('/static/docs/Карточка_АНО_ДПО_СК_Альфа.doc')">
+                <img src="/static/doc.svg" alt="">
+                <div class="file-text">
+                    Карточка АНО ДПО СК Альфа
+                </div>
+            </div>
+            <div class="file-card" onclick="location.replace('/static/docs/ПК_2024.pdf')">
+                <img src="/static/doc.svg" alt="">
+                <div class="file-text">
+                    Программа повышения квалификации охранников
+                </div>
+            </div>
+            <div class="file-card" onclick="location.replace('/static/docs/ПО_2024.pdf')">
+                <img src="/static/doc.svg" alt="">
+                <div class="file-text">
+                    Программа профессиональной подготовки охранников
+                </div>
+            </div>
+        </div>
+        <div class="title-text" style="margin-top: 30px;">
+            Банковские реквизиты
+            <span class="title-text-border"></span>
+        </div>
+        <div class="req-block">
+            <span><span class="strong-text-r">Наименование: </span><span class="light-text-r">АНО ДПО «СК «Альфа»</span></span>
+            <span><span class="strong-text-r">ИНН: </span><span class="light-text-r">7224094520</span></span>
+            <span><span class="strong-text-r">КПП: </span><span class="light-text-r">722401001</span></span>
+            <span><span class="strong-text-r">ОГРН: </span><span class="light-text-r">1257200005292</span></span>
+            <span><span class="strong-text-r">Расчётный счёт: </span><span class="light-text-r">40702810667770000071</span></span>
+            <span><span class="strong-text-r">Наименование: </span><span class="light-text-r">Западно-Сибирский банк ПАО Сбербанк г. Тюмень</span></span>
+            <span><span class="strong-text-r">БИК: </span><span class="light-text-r">047102651</span></span>
+            <span><span class="strong-text-r">Корсчёт: </span><span class="light-text-r">30101810800000000651</span></span>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="logo">
+            <img src="/static/logo.svg" alt="">
+            <span class="logotext" style="color: white; padding: 20px 0px;">АНО ДПО<br>СК «Альфа»</span>
+        </div>
+        <div class="block-content">
+            <div class="footer-block">
+                <span class="title-footer-block">Компания</span>
+                <span class="text-footer-block">О компании</span>
+            </div>
+            <div class="footer-block">
+                <span class="title-footer-block">Сведения об образовательной организации</span>
+                <span class="text-footer-block">Банковские реквизиты</span>
+                <span class="text-footer-block">Документы</span>
+            </div>
+            <div class="footer-block">
+                <span class="title-footer-block">8 (34551) 7-38-81<br>+7 912 923-20-88</span>
+                <span class="text-footer-block">Email: skalfa2016@mail.ru</span>
+                <span class="text-footer-block">Адрес: 627753, Тюменская область, г. Ишим, ул. Рокоссовского, 26 (1/2)</span>
+            </div>
+        </div>
+        <div class="down-block">
+            <div class="text-footer-down">© 2010 - 2025 Автономная некоммерческая организация дополнительного профессионального образования «Стрелковый клуб «Альфа»  Все материалы, находящиеся на сайте охраняются в соответствии с законодательством Российской Федерации, в том числе об авторском праве и смежных правах</div>
+            <div class="watermark" onclick="location.replace('https://sever-web.ru')">
+                <span class="text-footer-block">Разработано</span>
+                <img src="/static/slogo.svg" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

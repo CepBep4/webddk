@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="{{url_for('static', filename='main.js')}}"></script>    
+    <title>Главная</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="/static/logo.svg" alt="">
+            <span class="logotext">АНО ДПО<br>«СК «Альфа»</span>
+        </div>
+        <div class="navigation container-row">
+            <div class="nav-property" onclick="location.replace('/about')">О нас <span class="brdnav"></span></div>
+            <div class="nav-property" onclick="location.replace('/#programs')">Программа<span class="brdnav"></span></div>
+            <div class="nav-property" onclick="location.replace('/documents')">Документы<span class="brdnav"></span></div>
+            <div class="nav-property" onclick="location.replace('/contact')">Контакты<span class="brdnav"></span></div>
+        </div>
+    </div>
+    <div class="route-div">
+        <div class="text-route">
+            <div><span class="black-route" onclick="location.replace('/')">Главная / </span><span class="gray-route">Компания</span></div>
+            <div class="title-route">Компания</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="title-text">
+            О нас
+            <span class="title-text-border"></span>
+        </div>
+        <div class="parent-text">
+            Автономная некоммерческая организация дополнительного профессионального образования «Стрелковый клуб «Альфа» (АНО ДПО «СК «Альфа») осуществляет свою деятельность на основании Устава и зарегистрирована в установленном порядке. Дата регистрации: ОГРН 1257200005292, ИНН 7224094520. Учебный центр расположен по адресу: Тюменская область, г. Ишим, ул. Рокоссовского, д. 26, здания 1/1 и 1/2.
+            <br><br>
+            Контактную информацию, схему проезда, номера телефонов и адреса электронной почты можно найти в разделе «Контакты».
+            <br><br>
+            Основным видом деятельности АНО ДПО «СК «Альфа» является оказание образовательных услуг в области профессионального обучения и повышения квалификации частных охранников 4–6 разрядов, а также подготовка руководителей частных охранных организаций. Учебные программы соответствуют требованиям законодательства РФ и направлены на формирование и развитие профессиональных компетенций в области охранной деятельности.
+            <br><br>
+            Занятия проводятся с применением современного оборудования, включая учебно-компьютерные классы, стрелковую галерею и специальную базу для отработки навыков обращения с оружием и специальными средствами. Учебный процесс включает теоретическую и практическую подготовку с использованием материалов, утверждённых МВД России.
+            <br><br>
+            Для поступления на курсы необходимо обратиться в учебный отдел АНО ДПО СК «Альфа» лично.
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="logo">
+            <img src="/static/logo.svg" alt="">
+            <span class="logotext" style="color: white; padding: 20px 0px;">АНО ДПО<br>СК «Альфа»</span>
+        </div>
+        <div class="block-content">
+            <div class="footer-block">
+                <span class="title-footer-block">Компания</span>
+                <span class="text-footer-block">О компании</span>
+            </div>
+            <div class="footer-block">
+                <span class="title-footer-block">Сведения об образовательной организации</span>
+                <span class="text-footer-block">Банковские реквизиты</span>
+                <span class="text-footer-block">Документы</span>
+            </div>
+            <div class="footer-block">
+                <span class="title-footer-block">8 (34551) 7-38-81<br>+7 912 923-20-88</span>
+                <span class="text-footer-block">Email: skalfa2016@mail.ru</span>
+                <span class="text-footer-block">Адрес: 627753, Тюменская область, г. Ишим, ул. Рокоссовского, 26 (1/2)</span>
+            </div>
+        </div>
+        <div class="down-block">
+            <div class="text-footer-down">© 2010 - 2025 Автономная некоммерческая организация дополнительного профессионального образования «Стрелковый клуб «Альфа»  Все материалы, находящиеся на сайте охраняются в соответствии с законодательством Российской Федерации, в том числе об авторском праве и смежных правах</div>
+            <div class="watermark" onclick="location.replace('https://sever-web.ru')">
+                <span class="text-footer-block">Разработано</span>
+                <img src="/static/slogo.svg" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

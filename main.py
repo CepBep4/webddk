@@ -19,5 +19,5 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == "__main__":
-    # app.run(debug=True, host="0.0.0.0", port=6200)
-    app.run()
+    app.run(debug=True, host="0.0.0.0", port=6200)
+    # app.run()

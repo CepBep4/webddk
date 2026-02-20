@@ -1,0 +1,208 @@
+/* Admin panel styles */
+.admin-body {
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+.admin-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    background: #1a1a2e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+.admin-nav-logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.admin-nav-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.admin-nav-links a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.admin-nav-links a:hover {
+    color: #fff;
+}
+.admin-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+.admin-page-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+}
+.admin-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #1a1a2e;
+}
+.admin-login-wrap {
+    max-width: 360px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.admin-form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: #333;
+}
+.admin-form input[type="text"],
+.admin-form input[type="password"],
+.admin-form textarea,
+.admin-form input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.admin-form input[type="file"] {
+    padding: 8px;
+}
+.admin-textarea {
+    font-family: inherit;
+    min-height: 320px;
+    resize: vertical;
+}
+.admin-form .admin-btn {
+    margin-top: 20px;
+}
+.admin-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.admin-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.admin-btn:hover {
+    background: #1d4ed8;
+}
+.admin-btn-secondary {
+    background: #64748b;
+}
+.admin-btn-secondary:hover {
+    background: #475569;
+}
+.admin-btn-danger {
+    background: #dc2626;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+}
+.admin-btn-danger:hover {
+    background: #b91c1c;
+}
+.admin-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #2563eb;
+    text-decoration: none;
+}
+.admin-link:hover {
+    text-decoration: underline;
+}
+.admin-hint {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+.admin-muted {
+    color: #94a3b8;
+    font-style: italic;
+}
+.admin-section {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.admin-section h2 {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+    color: #1a1a2e;
+}
+.admin-form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+}
+.admin-form-inline input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+}
+.admin-form-inline input[type="file"] {
+    width: auto;
+}
+.admin-doc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.admin-doc-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+.admin-doc-item:last-child {
+    border-bottom: none;
+}
+.admin-doc-title {
+    flex: 1;
+    min-width: 200px;
+    font-weight: 500;
+}
+.admin-doc-filename {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+.admin-program-block {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.admin-program-block h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #334155;
+}

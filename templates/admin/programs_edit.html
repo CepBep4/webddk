@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Программы — Админ</title>
+</head>
+<body class="admin-body">
+    {% include 'admin/nav.html' %}
+    <div class="admin-content">
+        <h1 class="admin-page-title">Программы</h1>
+        <p class="admin-hint">Каждая программа: название (можно с &lt;br&gt;), описание, пункты (каждый с новой строки), имя картинки (например p1.png). Пустое название — программа не показывается.</p>
+        <form method="post" action="{{ url_for('admin_programs') }}" class="admin-form">
+            {% for p in program_slots %}
+            <div class="admin-program-block">
+                <h3>Программа {{ loop.index }}{% if not p %} (новая){% endif %}</h3>
+                <label>Название</label>
+                <input type="text" name="title_{{ loop.index0 }}" value="{% if p %}{{ p.title|e }}{% endif %}" placeholder="Название">
+                <label>Описание</label>
+                <input type="text" name="description_{{ loop.index0 }}" value="{% if p %}{{ p.description|e }}{% endif %}" placeholder="Описание">
+                <label>Пункты (каждый с новой строки)</label>
+                <textarea name="options_{{ loop.index0 }}" rows="3">{% if p %}{{ p.options|join('\n') }}{% endif %}</textarea>
+                <label>Картинка (файл в /static/)</label>
+                <input type="text" name="image_{{ loop.index0 }}" value="{% if p %}{{ p.image|e }}{% else %}p{{ loop.index }}.png{% endif %}" placeholder="p1.png">
+            </div>
+            {% endfor %}
+            <div class="admin-form-actions">
+                <button type="submit" class="admin-btn">Сохранить</button>
+                <a href="{{ url_for('admin_dashboard') }}" class="admin-btn admin-btn-secondary">Отмена</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

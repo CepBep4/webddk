@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Админ-панель</title>
+</head>
+<body class="admin-body">
+    {% include 'admin/nav.html' %}
+    <div class="admin-content">
+        <h1 class="admin-page-title">Управление контентом</h1>
+        <div class="admin-cards">
+            <a href="{{ url_for('admin_about') }}" class="admin-card">
+                <span class="admin-card-title">О компании</span>
+                <span class="admin-card-desc">Редактировать текст страницы «О нас»</span>
+            </a>
+            <a href="{{ url_for('admin_documents') }}" class="admin-card">
+                <span class="admin-card-title">Документы</span>
+                <span class="admin-card-desc">Добавлять и удалять документы</span>
+            </a>
+            <a href="{{ url_for('admin_programs') }}" class="admin-card">
+                <span class="admin-card-title">Программы</span>
+                <span class="admin-card-desc">Редактировать программы на главной</span>
+            </a>
+            <a href="{{ url_for('admin_requisites') }}" class="admin-card">
+                <span class="admin-card-title">Реквизиты</span>
+                <span class="admin-card-desc">Банковские реквизиты</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

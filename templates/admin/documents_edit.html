@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Документы — Админ</title>
+</head>
+<body class="admin-body">
+    {% include 'admin/nav.html' %}
+    <div class="admin-content">
+        <h1 class="admin-page-title">Документы</h1>
+
+        <div class="admin-section">
+            <h2>Добавить документ</h2>
+            <form method="post" action="{{ url_for('admin_documents') }}" enctype="multipart/form-data" class="admin-form admin-form-inline">
+                <input type="hidden" name="action" value="add">
+                <input type="text" name="title" placeholder="Название документа" required>
+                <input type="file" name="file" accept=".pdf,.doc,.docx" required>
+                <button type="submit" class="admin-btn">Добавить</button>
+            </form>
+            <p class="admin-hint">Форматы: PDF, DOC, DOCX. Файл сохраняется в раздел «Документы» на сайте.</p>
+        </div>
+
+        <div class="admin-section">
+            <h2>Список документов</h2>
+            <ul class="admin-doc-list">
+                {% for doc in documents %}
+                <li class="admin-doc-item">
+                    <span class="admin-doc-title">{{ doc.title }}</span>
+                    <span class="admin-doc-filename">{{ doc.filename }}</span>
+                    <form method="post" action="{{ url_for('admin_documents') }}" style="display:inline;">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="index" value="{{ loop.index0 }}">
+                        <button type="submit" class="admin-btn admin-btn-danger" onclick="return confirm('Удалить этот документ из списка?');">Удалить</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+            {% if not documents %}
+            <p class="admin-muted">Документов пока нет.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -20,98 +20,21 @@
             <span class="title-text-border"></span>
         </div>
         <div class="file-block" style="margin-top: 30px;">
-            <div class="file-card" onclick="location.href = '/static/docs/МИНИСТЕРСТВО_ЮСТИЦИИ_РОССИЙСКОЙ_ФЕДЕРАЦИИ.pdf'">
+            {% for doc in documents %}
+            <div class="file-card" onclick="location.href = '{{ url_for('static', filename='docs/' ~ doc.filename) }}'">
                 <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Свидетельство о гос. регистрации неком. организации
-                </div>
+                <div class="file-text">{{ doc.title }}</div>
             </div>
-            <div class="file-card" onclick="location.href = '/static/docs/ИНН.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Свидетельство о постановке организации на учет в налоговом органе 
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/Устав.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Устав организации
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/Карточка_АНО_ДПО_СК_Альфа.doc'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Карточка АНО ДПО СК Альфа
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/ПК_2024.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа повышения квалификации охранников
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/ПО_2024.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа профессиональной подготовки охранников
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/4_разряд.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа профессиональной подготовки охранника 4 разряда
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/5_разряд.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа профессиональной подготовки охранника 5 разряда
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/6_разряд.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа профессиональной подготовки охранника 6 разряда
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/Повышение_4_разряд.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа повышения квалификации охранника 4 разряда
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/Повышение_6_разряд.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа повышения квалификации охранника 6 разряда
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/БО2025.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Программа обучения<br>на безопасное обращение с оружием
-                </div>
-            </div>
-            <div class="file-card" onclick="location.href = '/static/docs/Положение_об_обеспечении_условий_доступности_для_инвалидов.pdf'">
-                <img src="/static/doc.svg" alt="">
-                <div class="file-text">
-                    Положение об обеспечении условий доступности для инвалидов
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="title-text" style="margin-top: 30px;">
             Банковские реквизиты
             <span class="title-text-border"></span>
         </div>
         <div class="req-block">
-            <span><span class="strong-text-r">Наименование: </span><span class="light-text-r">АНО ДПО «СК «Альфа»</span></span>
-            <span><span class="strong-text-r">ИНН: </span><span class="light-text-r">7224094520</span></span>
-            <span><span class="strong-text-r">КПП: </span><span class="light-text-r">722401001</span></span>
-            <span><span class="strong-text-r">ОГРН: </span><span class="light-text-r">1257200005292</span></span>
-            <span><span class="strong-text-r">Расчётный счёт: </span><span class="light-text-r">40702810667770000071</span></span>
-            <span><span class="strong-text-r">Наименование: </span><span class="light-text-r">Западно-Сибирский банк ПАО Сбербанк г. Тюмень</span></span>
-            <span><span class="strong-text-r">БИК: </span><span class="light-text-r">047102651</span></span>
-            <span><span class="strong-text-r">Корсчёт: </span><span class="light-text-r">30101810800000000651</span></span>
+            {% for key, value in requisites.items() %}
+            <span><span class="strong-text-r">{{ key }}: </span><span class="light-text-r">{{ value }}</span></span>
+            {% endfor %}
         </div>
     </div>
     {% include 'footer.html' %}

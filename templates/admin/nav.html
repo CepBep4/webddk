@@ -1,0 +1,11 @@
+<nav class="admin-nav">
+    <a href="{{ url_for('admin_dashboard') }}" class="admin-nav-logo">Админка</a>
+    <div class="admin-nav-links">
+        <a href="{{ url_for('admin_about') }}">О компании</a>
+        <a href="{{ url_for('admin_documents') }}">Документы</a>
+        <a href="{{ url_for('admin_programs') }}">Программы</a>
+        <a href="{{ url_for('admin_requisites') }}">Реквизиты</a>
+        <a href="/" target="_blank">Сайт</a>
+        <a href="{{ url_for('admin_logout') }}">Выход</a>
+    </div>
+</nav>

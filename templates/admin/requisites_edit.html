@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Реквизиты — Админ</title>
+</head>
+<body class="admin-body">
+    {% include 'admin/nav.html' %}
+    <div class="admin-content">
+        <h1 class="admin-page-title">Банковские реквизиты</h1>
+        <form method="post" action="{{ url_for('admin_requisites') }}" class="admin-form">
+            {% for key in ['Наименование', 'ИНН', 'КПП', 'ОГРН', 'Расчётный счёт', 'Банк', 'БИК', 'Корсчёт'] %}
+            <label>{{ key }}</label>
+            <input type="text" name="req_{{ key }}" value="{{ requisites.get(key, '')|e }}" placeholder="{{ key }}">
+            {% endfor %}
+            <div class="admin-form-actions">
+                <button type="submit" class="admin-btn">Сохранить</button>
+                <a href="{{ url_for('admin_dashboard') }}" class="admin-btn admin-btn-secondary">Отмена</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
